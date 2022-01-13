@@ -18,7 +18,7 @@ class _StreamingExampleState extends State<StreamingExample>
   //rtmp://global-live.mux.com:5222/app/fe05b077-2faa-0058-8d81-3a8a3ff02876
   //rtmp://live.bdata.link/LiveApp/732489839033615006342724
   TextEditingController _textFieldController = TextEditingController(
-      text: "rtmp://live.bdata.link/LiveApp/732489839033615006342724");
+      text: "rtmp://192.168.0.147:1935/live/audio");
   bool isVisible = true;
   Timer? _timer;
   int seconds = 0;
