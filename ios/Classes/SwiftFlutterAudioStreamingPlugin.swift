@@ -45,6 +45,12 @@ public class SwiftFlutterAudioStreamingPlugin: NSObject, FlutterPlugin {
     case "disposeStreaming":
         audioStreaming?.dispose()
         result(nil)
+    case "muted":
+        audioStreaming?.muted()
+        result(nil)
+    case "unMuted":
+        audioStreaming?.unMuted()
+        result(nil)
     default:
         result(nil)
     }

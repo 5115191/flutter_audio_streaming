@@ -13,6 +13,7 @@ public class AudioStreaming {
     private var rtmpStream: RTMPStream!
     private var url: String? = nil
     private var name: String? = nil
+    private var isMuted: Bool? = false
     private var retries: Int = 0
     private let myDelegate = AudioStreamingQoSDelegate()
     
@@ -41,7 +42,7 @@ public class AudioStreaming {
             result(error)
         }
         rtmpStream.audioSettings = [
-            .muted: false, // mute audio
+            .muted: self.isMuted, // mute audio
             .bitrate: 32 * 1000,
         ]
         // "0" means the same of input
@@ -157,6 +158,14 @@ public class AudioStreaming {
     
     public func stop() {
         rtmpConnection.close()
+    }
+
+    public func muted() {
+        rtmpStream.addAudioData.muted=true;
+    }
+
+    public func unMuted() {
+        rtmpStream.addAudioData.muted=false;
     }
 
     public func dispose(){
