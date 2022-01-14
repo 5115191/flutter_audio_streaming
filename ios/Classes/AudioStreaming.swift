@@ -160,16 +160,25 @@ public class AudioStreaming {
         rtmpConnection.close()
     }
 
-    public func muted() {
-        rtmpStream.addAudioData.muted=true;
+    public func mute() {
+//         self.isMuted=true;
+        rtmpStream.audioSettings = [
+            .muted: true, // mute audio
+        ]
+        print("mute: true1")
     }
 
-    public func unMuted() {
-        rtmpStream.addAudioData.muted=false;
+    public func unMute() {
+//         self.isMuted=false;
+        rtmpStream.audioSettings = [
+            .muted: false, // mute audio
+        ]
+        print("mute: false1")
+
     }
 
     public func dispose(){
-        
+
     }
 }
 
